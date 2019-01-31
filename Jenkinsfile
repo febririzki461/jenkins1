@@ -1,5 +1,5 @@
 pipeline {
-    
+    agent any
     stages {
 	stage('Checkout'){
 	    steps {
@@ -15,7 +15,7 @@ pipeline {
                     sh 'go get -u github.com/gin-gonic/gin'
                     
                     //or -update
-                    sh 'cd ${GOPATH}/src/cmd/project/ && dep ensure' 
+                    //sh 'cd ${GOPATH}/src/cmd/project/ && dep ensure' 
             }
 	}
     }
