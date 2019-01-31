@@ -8,8 +8,10 @@ pipeline {
             }
         }
 	stage('Checkout'){
-             echo 'Checking out SCM'
-             checkout scm
-        }
+	    steps {
+                  echo 'Checking out SCM'
+                  checkout scm
+            }
+	}
     }
 }
