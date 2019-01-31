@@ -7,5 +7,9 @@ pipeline {
                echo 'aaaaa'
             }
         }
+	stage('Checkout'){
+             echo 'Checking out SCM'
+             checkout scm
+        }
     }
 }
