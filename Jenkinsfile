@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { dockerfile true }
     stages {
 	stage('Checkout'){
 	    steps {
@@ -11,13 +11,9 @@ pipeline {
 	    steps {
                     echo 'Pulling Dependencies'
 		    withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {  
-          sh '''
-          go version
-          '''          
-                    //or -update
-                    //sh 'cd ${GOPATH}/src/cmd/project/ && dep ensure' 
-            }
-	  }
+                    sh ''' go version '''  
+            	  }
+	      }
 	}
     }
 }
